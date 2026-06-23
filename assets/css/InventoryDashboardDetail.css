@@ -1,0 +1,157 @@
+/* ==========================================================================
+   STOCKPILOT - DETAILED INVENTORY PAGE MODULE
+   ========================================================================== */
+
+body {
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background: #f5f7fa;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* 🟢 Fixed: Changed layout padding to handle sticky/fixed layout configurations safely */
+.inventory-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px 40px 20px; /* Added 80px padding top space below the header */
+  animation: fadeIn 0.8s ease-in-out;
+  box-sizing: border-box;
+}
+
+.inventory-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.inventory-header h1 {
+  font-size: 2rem;
+  color: #0f6fff;
+  margin: 10px 0;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.inventory-header p {
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+.inventory-header .back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+  font-size: 0.93rem;
+  color: #0f6fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.25s ease;
+}
+
+.inventory-header .back-link:hover {
+  color: #0b4fb8;
+}
+
+/* Inventory Table */
+.inventory-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  animation: fadeInUp 1s ease;
+}
+
+.inventory-table th,
+.inventory-table td {
+  padding: 16px 14px;
+  text-align: center;
+  font-size: 0.93rem;
+}
+
+.inventory-table th {
+  background: #f8fafc;
+  color: #111827;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.inventory-table tbody tr {
+  border-bottom: 1px solid #f8fafc;
+  transition: background 0.2s ease;
+}
+
+.inventory-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.inventory-table tbody tr:hover {
+  background: #fdfefe;
+}
+
+.inventory-table td strong {
+  color: #111827;
+}
+
+/* Row Status Variant Highlights */
+.row-expired {
+  background: #fff5f5;
+  color: #e53e3e;
+}
+.row-expired td strong { color: #e53e3e; }
+
+.row-urgent {
+  background: #fffaf0;
+  color: #dd6b20;
+}
+.row-urgent td strong { color: #dd6b20; }
+
+.row-warning {
+  background: #f7fafc;
+  color: #2b6cb0;
+}
+.row-warning td strong { color: #2b6cb0; }
+
+.days-text {
+  font-weight: 700;
+}
+
+/* Badge Layouts */
+.badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: rgba(15, 111, 255, 0.08);
+  color: #0f6fff;
+}
+
+/* Animations Core Engine */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Structural Breakpoints */
+@media (max-width: 768px) {
+  .inventory-wrapper {
+    padding-top: 100px;
+  }
+  .inventory-table th,
+  .inventory-table td {
+    font-size: 0.8rem;
+    padding: 12px 10px;
+  }
+}

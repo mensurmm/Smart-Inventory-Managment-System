@@ -1,0 +1,194 @@
+/* General Layout */
+.inventory-wrapper {
+   padding: 110px 20px 40px;
+  background: #f4f7f6;
+  min-height: 100vh;
+  animation: fadeIn 0.8s ease-in-out;
+}
+.inventory-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.inventory-header h1 {
+  font-size: 2rem;
+  color: #0056b3;
+  margin-bottom: 10px;
+}
+
+.inventory-header p {
+  color: #666;
+  font-size: 1rem;
+}
+
+/* Summary Grid */
+.inventory-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns for the top row */
+  gap: 25px;
+  margin: 0 auto 50px auto;
+  max-width: 1000px; /* keeps grid centered */
+}
+
+/* Force the last two cards to span centered positions */
+/* Summary Grid */
+.inventory-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+
+  max-width: 1000px;
+  margin: 0 auto 30px auto;
+}
+
+/* Remove weird spacing behavior */
+.inventory-summary-grid .stat-card {
+  width: 100%;
+}
+
+/* Base Card Style */
+.stat-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+  text-align: center;
+  animation: fadeInUp 0.8s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.stat-card h3 {
+  font-size: 1rem;
+  color: #555;
+  text-transform: uppercase;
+  margin: 10px 0;
+  letter-spacing: 0.5px;
+}
+
+.stat-card .value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  margin: 12px 0;
+  display: block;
+}
+
+.stat-card p {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* Card Icon */
+.card-icon {
+  display: inline-block;
+  background: #e7f0fd;
+  width: 55px;
+  height: 55px;
+  line-height: 55px;
+  text-align: center;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover .card-icon {
+  transform: rotate(8deg) scale(1.1);
+}
+
+/* Variants */
+.stat-card.total {
+  border-top: 5px solid #0056b3;
+}
+.stat-card.sold {
+  border-top: 5px solid #2e7d32;
+}
+.stat-card.low-stock {
+  border-top: 5px solid #f39c12;
+}
+.stat-card.expiring {
+  background: #fff3e0;
+  border-top: 5px solid #f57c00;
+}
+.stat-card.expired {
+  background: #ffebee;
+  border-top: 5px solid #c62828;
+}
+
+/* Action Center */
+.action-center {
+  text-align: center;
+  padding: 40px;
+  background: #f8f9fa;
+  border-radius: 15px;
+  border: 2px dashed #0056b3;
+  max-width: 800px;
+  margin: 0 auto;
+  animation: fadeInUp 1s ease;
+}
+
+.btn-main-inventory {
+  background: #0056b3;
+  color: white;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 40px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 86, 179, 0.2);
+}
+
+.btn-main-inventory:hover {
+  transform: translateY(-3px);
+  background: #003d80;
+  box-shadow: 0 6px 15px rgba(0, 86, 179, 0.3);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .inventory-summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .inventory-summary-grid {
+    grid-template-columns: 1fr;
+  }
+  .btn-main-inventory {
+    width: 100%;
+  }
+}

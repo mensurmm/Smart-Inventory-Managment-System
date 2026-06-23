@@ -1,0 +1,267 @@
+/* ==========================================================================
+   Cashier Desk - Main Layout
+   ========================================================================== */
+
+.cashier-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   Scanner & Controls
+   ========================================================================== */
+
+.scanner-wrapper {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 25px;
+}
+
+.scanner-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* The Camera Container Fix */
+#reader-container {
+  width: 100%;
+  background: #000;
+  border-radius: 12px;
+  border: 2px solid #3498db;
+  overflow: hidden;
+  margin-top: 15px;
+  /* This ensures the camera box has a shape even before the video loads */
+  min-height: 250px;
+}
+
+/* Force the library video to behave on Mobile */
+#reader {
+  width: 100% !important;
+  border: none !important;
+}
+
+#reader video {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 350px !important;
+  object-fit: cover !important;
+}
+
+/* Hide library-specific UI elements to keep it professional */
+#reader__dashboard_section_swaplink,
+#reader__status_span,
+#reader span {
+  display: none !important;
+}
+
+/* Manual Entry Group */
+.manual-input-group {
+  display: flex;
+  gap: 10px;
+}
+
+.manual-input-group input {
+  flex: 1;
+  padding: 12px;
+  border: 1.5px solid #dcdfe6;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.manual-input-group input:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+/* ==========================================================================
+   Cart Table
+   ========================================================================== */
+
+.cart-display {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  overflow-x: auto;
+}
+
+#cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 500px;
+}
+
+#cart-table th {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 2px solid #f0f2f5;
+  color: #909399;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+#cart-table td {
+  padding: 15px 12px;
+  border-bottom: 1px solid #f0f2f5;
+  vertical-align: middle;
+}
+
+.qty-input {
+  width: 60px;
+  padding: 8px;
+  border: 1px solid #dcdfe6;
+  border-radius: 6px;
+  text-align: center;
+}
+
+/* ==========================================================================
+   Checkout Aside (Sticky Sidebar)
+   ========================================================================== */
+
+.checkout-aside {
+  position: sticky;
+  top: 20px;
+  height: fit-content;
+}
+
+.total-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.amount-display {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #2c3e50;
+  margin: 15px 0;
+  padding: 15px;
+  background: #f8f9fb;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color: #606266;
+}
+
+/* Payment Mode Grid */
+.method-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.method-btn {
+  padding: 10px 5px;
+  border: 1.5px solid #dcdfe6;
+  background: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.method-btn.active {
+  background: #3498db;
+  color: #fff;
+  border-color: #3498db;
+}
+
+/* Finish Sale Button */
+.btn-finish-sale {
+  width: 100%;
+  margin-top: 25px;
+  padding: 15px;
+  background: #2ecc71;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-finish-sale:hover {
+  background: #27ae60;
+}
+
+.btn-finish-sale:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+}
+#btn-scan {
+  padding: 10px 15px;
+  background: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+#btn-scan:hover {
+  background: #2980b9;
+}
+#btn-manual-search {
+  padding: 10px 15px;
+  background: #2e78cc;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+#btn-manual-search:hover {
+  background: #1c5fa0;
+}
+/* ==========================================================================
+   Responsive Mobile Adjustments
+   ========================================================================== */
+
+@media (max-width: 992px) {
+  .cashier-container {
+    grid-template-columns: 1fr;
+  }
+
+  .checkout-aside {
+    position: static;
+  }
+
+  .amount-display {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cashier-container {
+    padding: 10px;
+  }
+
+  .method-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .scanner-controls {
+    gap: 10px;
+  }
+}

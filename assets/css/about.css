@@ -1,0 +1,138 @@
+/* ==========================================================================
+   STOCKPILOT - ABOUT US PAGE STYLES
+   ========================================================================== */
+
+.about-container {
+  width: min(1100px, 92%);
+  margin: 50px auto;
+  padding: 0 20px;
+  color: #1f2937;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.about-header h1 {
+  font-size: 2.5rem;
+  color: #0f6fff;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 10px;
+}
+
+.about-header p {
+  color: #6b7280;
+  font-size: 1.1rem;
+}
+
+/* Highly Animated Features Grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 70px;
+}
+
+.feature-card {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 16px;
+  border: 1px solid #eef2f5;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: relative;
+  top: 0;
+  overflow: hidden;
+}
+
+/* Smooth hover pop and glowing blue border accent */
+.feature-card:hover {
+  top: -8px;
+  box-shadow: 0 12px 30px rgba(15, 111, 255, 0.12);
+  border-color: rgba(15, 111, 255, 0.3);
+}
+
+.project-intro {
+  max-width: 800px;
+  margin: -20px auto 50px auto;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #4b5563;
+}
+/* Card active shine effect overlay */
+.feature-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.feature-card:hover::before {
+  left: 100%;
+}
+
+.feature-icon {
+  font-size: 2rem;
+  color: #0f6fff;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+  transform: scale(1.15) rotate(5deg);
+}
+
+.feature-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+  color: #111827;
+}
+
+.feature-card p {
+  color: #6b7280;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Developer Bio Section */
+.dev-section {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.dev-section i {
+  font-size: 2.5rem;
+  color: #111827;
+  margin-bottom: 15px;
+}
+
+.dev-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  color: #111827;
+}
+
+.dev-section p {
+  color: #4b5563;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto;
+}

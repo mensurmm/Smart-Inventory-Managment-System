@@ -1,0 +1,370 @@
+/* =========================================
+   CASHIER PERFORMANCE PAGE
+========================================= */
+
+.inventory-wrapper {
+  padding: 40px 28px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top right, rgba(0, 86, 179, 0.08), transparent 25%),
+    linear-gradient(to bottom, #f4f7fb, #edf2f7);
+  animation: pageFade 0.8s ease;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.inventory-header {
+  margin-bottom: 35px;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.category-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.4px;
+  position: relative;
+}
+
+.category-title::after {
+  content: "";
+  width: 90px;
+  height: 4px;
+  border-radius: 20px;
+  background: linear-gradient(to right, #0056b3, #3b82f6);
+  display: block;
+  margin-top: 10px;
+}
+
+/* =========================================
+   PERFORMANCE GRID
+========================================= */
+
+.performance-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 28px;
+  margin-bottom: 35px;
+}
+
+/* =========================================
+   TOP SELLER CARDS
+========================================= */
+
+.top-seller-card {
+  position: relative;
+  overflow: hidden;
+  padding: 28px;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+  animation: fadeInUp 0.8s ease;
+  cursor: pointer;
+}
+
+.top-seller-card::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -50px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.10);
+}
+
+.top-seller-card:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+/* GOLD CARD */
+
+.top-seller-card.gold {
+  background: linear-gradient(135deg, #0056b3, #003d80);
+  color: #fff;
+  box-shadow: 0 12px 30px rgba(0, 86, 179, 0.25);
+}
+
+.top-seller-card.gold:hover {
+  box-shadow: 0 18px 40px rgba(0, 86, 179, 0.35);
+}
+
+/* SILVER CARD */
+
+.top-seller-card.silver {
+  background: rgba(255,255,255,0.88);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.5);
+  color: #1e293b;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+}
+
+.top-seller-card.silver:hover {
+  box-shadow: 0 16px 38px rgba(0,0,0,0.12);
+}
+
+/* =========================================
+   MEDAL ICON
+========================================= */
+
+.medal-icon {
+  font-size: 3.4rem;
+  transition:
+    transform 0.35s ease,
+    filter 0.35s ease;
+  animation: floatIcon 3s infinite ease-in-out;
+}
+
+.top-seller-card:hover .medal-icon {
+  transform: rotate(8deg) scale(1.1);
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,0.15));
+}
+
+/* =========================================
+   SELLER INFO
+========================================= */
+
+.seller-stats h4 {
+  margin: 0;
+  font-size: 0.92rem;
+  font-weight: 600;
+  opacity: 0.9;
+  letter-spacing: 0.3px;
+}
+
+.seller-stats h2 {
+  margin: 8px 0;
+  font-size: 1.7rem;
+  font-weight: 800;
+}
+
+.seller-stats span {
+  font-size: 0.98rem;
+  opacity: 0.92;
+}
+
+/* =========================================
+   TABLE CARD
+========================================= */
+
+.inventory-card {
+  background: rgba(255,255,255,0.88);
+  backdrop-filter: blur(12px);
+  border-radius: 22px;
+  padding: 18px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+  overflow-x: auto;
+  animation: fadeInUp 1s ease;
+}
+
+/* =========================================
+   TABLE
+========================================= */
+
+.inventory-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 850px;
+}
+
+/* TABLE HEAD */
+
+.inventory-table thead {
+  background: linear-gradient(to right, #0056b3, #0077ff);
+}
+
+.inventory-table th {
+  text-align: left;
+  padding: 18px;
+  color: white;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  font-weight: 700;
+}
+
+.inventory-table th:first-child {
+  border-top-left-radius: 14px;
+}
+
+.inventory-table th:last-child {
+  border-top-right-radius: 14px;
+}
+
+/* TABLE BODY */
+
+.inventory-table td {
+  padding: 18px;
+  border-bottom: 1px solid #eef2f7;
+  font-size: 0.92rem;
+  color: #334155;
+}
+
+.inventory-table tbody tr {
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.inventory-table tbody tr:hover {
+  background: rgba(0, 123, 255, 0.04);
+  transform: scale(1.004);
+}
+
+/* OFFLINE ROW */
+
+.offline-row {
+  opacity: 0.65;
+  background: rgba(248,250,252,0.9);
+}
+
+/* =========================================
+   STATUS
+========================================= */
+
+.status-active {
+  color: #16a34a;
+  font-weight: 700;
+}
+
+.status-off {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.btn-view-small {
+  background: linear-gradient(to right, #0056b3, #007bff);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 700;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.btn-view-small:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0, 123, 255, 0.25);
+  opacity: 0.96;
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pageFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes floatIcon {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .inventory-wrapper {
+    padding: 25px 16px;
+  }
+
+  .category-title {
+    font-size: 1.6rem;
+  }
+
+  .top-seller-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .seller-stats h2 {
+    font-size: 1.4rem;
+  }
+
+  .medal-icon {
+    font-size: 3rem;
+  }
+}
+/* Highlight the top cashier */
+.top-performer-row {
+    background-color: #fff9db !important; /* Gold tint */
+}
+
+.crown-icon {
+    margin-left: 5px;
+    font-size: 1.1rem;
+}
+
+.revenue-text {
+    font-weight: 700;
+    color: #2ecc71; /* Green for money */
+}
+
+.offline-row {
+    opacity: 0.6;
+    background-color: #f8f9fa;
+}
+
+/* Status colors */
+.status-active { color: #2ecc71; font-weight: bold; }
+.status-inactive { color: #e74c3c; font-weight: bold; }
+
+.btn-view-small {
+    padding: 5px 10px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}

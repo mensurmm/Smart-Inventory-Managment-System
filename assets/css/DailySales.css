@@ -1,0 +1,163 @@
+/* General Layout */
+body {
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background: #f5f7fa;
+  margin: 0;
+  color: #333;
+}
+
+.inventory-wrapper {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.inventory-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.inventory-header h1 {
+  font-size: 2rem;
+  color: #0056b3;
+  margin: 10px 0;
+}
+
+.inventory-header a {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: #3498db;
+  transition: color 0.3s ease;
+}
+.inventory-header a:hover {
+  color: #003d80;
+}
+
+/* Top Seller Card */
+.stat-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  text-align: center;
+  margin: 0 auto 30px auto;
+  animation: fadeInUp 0.8s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.stat-card h3 {
+  font-size: 1rem;
+  color: #555;
+  text-transform: uppercase;
+  margin: 10px 0;
+  letter-spacing: 0.5px;
+}
+
+.stat-card .value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2ecc71;
+  margin: 12px 0;
+  display: block;
+}
+
+.stat-card p {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.card-icon {
+  display: inline-block;
+  background: #e7f0fd;
+  width: 55px;
+  height: 55px;
+  line-height: 55px;
+  text-align: center;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+.stat-card:hover .card-icon {
+  transform: rotate(8deg) scale(1.1);
+}
+
+/* Sales Log Table */
+.inventory-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  animation: fadeInUp 1s ease;
+}
+
+.inventory-table th,
+.inventory-table td {
+  padding: 14px 12px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.inventory-table th {
+  background: #f0f4f8;
+  color: #0056b3;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.inventory-table tbody tr {
+  transition: background 0.3s ease;
+}
+.inventory-table tbody tr:hover {
+  background: #f9fcff;
+}
+
+.inventory-table td strong {
+  color: #2e7d32;
+}
+
+/* Payment Method Badge */
+.badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  background: #e7f0fd;
+  color: #0056b3;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .inventory-wrapper {
+    padding: 20px;
+  }
+  .inventory-table th, .inventory-table td {
+    font-size: 0.8rem;
+    padding: 10px;
+  }
+  .stat-card {
+    width: 100%;
+  }
+}
